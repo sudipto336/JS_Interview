@@ -1,0 +1,47 @@
+when a JS program is run, a global exection context is created and pushed inside call stack
+
+when a fn is invoked, a new exection context is created and pushed inside call stack
+
+exection context is created in 2 phase - 1. Memory creation Phase (variable environment) 2. Code execution phase (thread of execution)
+
+in memory creation phase, memory is allocated to all variable, params, fns and undefined (placeholder) is assigned to variables and reference to fn code (fn definition) is assigned to fns
+
+in code execution phase, code is executed 1 line at a time (synchronous single threaded)
+
+when a fn executio is completed then the execution context for that fn gets deleted and removed from call stack and control goes back to global execution context
+
+when whole code execution gets completed then global execution context gets removed from call stack and call stack becomes empty
+
+hoisting - ability to access variable before declaration and inintialization
+
+lexcal env of any variable - local memory of that variable inside execution context + lexical env of its parent where the variable is lecially present
+
+let and const are hoisted but in temporal dead zone
+
+when global execution context is created then global obj and this keyword are created and variables & fns gets attached to window obj and this keyword
+
+when an execution context is created reference to lexical scope of parent is also created
+
+temporal dead zone - time span between a let/const variable is hoisted till the time it is assigned some value
+
+in temporal dead zone any let/const variable cant be accessed otherwise reference error is thrown
+
+refernece error (not defined) is thrown if any variable is accessed which is not present in current scope (whole code)
+
+undefined - obtained when accessing a variable is allocated memory but not assigned any value
+
+not defined - obtained when accessing a variable is not present in current scope (whole code), so memory is not allocated to that variable
+
+closure - function bundled with its lexical env forms closure (fn + its lexical env)
+
+closure is used in memoization, currying etc.
+
+due to closure, fn can remember its lexical env (reference to variable present in lexical env) even outside its scope
+
+let, const - block scoped
+
+var - fn scoped
+
+fn statement/declaration vs fn expression - hoisting - calling fn expression before expression throws error as the variable stores undefined in memory before hitting the line of assigning, but fn statement/declaration deos not as it stores whole fn body in memory
+
+first class fn/citizen - ability of fn to be used as value - fn can be passed to another fn, can be returned from a fn, can be assigned to a variable
