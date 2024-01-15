@@ -45,3 +45,9 @@ var - fn scoped
 fn statement/declaration vs fn expression - hoisting - calling fn expression before expression throws error as the variable stores undefined in memory before hitting the line of assigning, but fn statement/declaration deos not as it stores whole fn body in memory
 
 first class fn/citizen - ability of fn to be used as value - fn can be passed to another fn, can be returned from a fn, can be assigned to a variable
+
+callback fn - a fn which is passed as arg to higher order fn
+
+higher order fn - a fn which takes a fn as arg or returns a fn
+
+functional programming - higher order fn, fn being used as value, fn passed as arg or returned from a fn, pure fn, splitting code into small fns - helps in modularity, reusuability
