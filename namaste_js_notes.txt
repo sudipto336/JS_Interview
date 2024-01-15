@@ -48,6 +48,6 @@ first class fn/citizen - ability of fn to be used as value - fn can be passed to
 
 callback fn - a fn which is passed as arg to higher order fn
 
-higher order fn - a fn which takes a fn as arg or returns a fn
+higher order fn - a fn which takes a fn as arg or returns a fn - helps in reusuability of code
 
 functional programming - higher order fn, fn being used as value, fn passed as arg or returned from a fn, pure fn, splitting code into small fns - helps in modularity, reusuability
