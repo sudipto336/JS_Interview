@@ -59,3 +59,16 @@ map - used to transform each element of array and return a new array with transf
 filter - used to filter out elements from array - can be used to get even/odd elements of array
 
 reduce - used to get single value from array - can be used to get max/sum of elements of array
+
+closure - a fn along with its lexical/sorrounding/outer env/scope bundled together forms closure
+
+due to closure, each fn can access variables present in its lexical env
+
+due to closure, a fn can remember and access variables present in its lexical env even if the fn called outside its scope
+
+advantage of closure - used in currying, some higher order fns (memoize, once), data hiding/encapsulation (data cant be accessed by other fn/code), modular design pattern
+
+disadvantage of closure - consumes lots of memory, memory held by variables of closure do not get garbage collected
+
+each time the fn involved in closure is called, create a independent, separate copy of closure variables
+
