@@ -48,6 +48,14 @@ first class fn/citizen - ability of fn to be used as value - fn can be passed to
 
 callback fn - a fn which is passed as arg to higher order fn
 
-higher order fn - a fn which takes a fn as arg or returns a fn - helps in reusuability of code
+higher order fn - a fn which takes a fn as arg or returns a fn - helps in reusuability of code - ex: map, filter, reduce
 
 functional programming - higher order fn, fn being used as value, fn passed as arg or returned from a fn, pure fn, splitting code into small fns - helps in modularity, reusuability
+
+callback fn passed to map/filter/reduce runs against each element of array
+
+map - used to transform each element of array and return a new array with transformed values - can be used to get double/triple/binary of each element of array
+
+filter - used to filter out elements from array - can be used to get even/odd elements of array
+
+reduce - used to get single value from array - can be used to get max/sum of elements of array
