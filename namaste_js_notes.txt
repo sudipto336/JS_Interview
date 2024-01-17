@@ -68,16 +68,35 @@ advantage of closure - used in currying, some higher order fns (memoize, once), 
 
 disadvantage of closure - consumes lots of memory as memory held by variables of closure do not get garbage collected
 
+when a fn called multuple times, each time it creates separate copy of closure variables etc.
+
 to perform any async operation after another operation, wrap that operation code inside a fn and pass to the another fn
 
 we can perform async operation by wrapping the code inside a fn and pass that fn as callback to setTimeout
 
 callback fn is a fn which is passed to another fn (higher order fn) and that callback fn gets called later by the another fn
 
-advantage of callback - used in async operation
+advantage of callback - it is used to handle async operation
 
 disadvantage of callback - 
-a. callback hell (callback inside callback and so on) 
+a. callback hell (callback inside callback and so on) - code grows vertically not horizontally - makes code unmaintainable and unreadable
 b. inversion of control (giving control of code to another code by passing callback fn to another fn)
 
+issues of callback can be handled using promise
+
+promise obj gets filled with the result of async operation after a certian period of time
+
+a callback fn is attached to promise obj using then() (not passed to another fn, so prevents inversion of control) 
+
+this callback fn gets called once whenever promise gets resolved i.e promise obj gets filled with data
+
+promise obj is immutable
+
+promise obj has 2 property - promise result and promise state
+
+promise obj has 3 states - pending, fulfilled, rejected
+
+when promise obj is fulfilled, the obj gets filled with data returned by async operation
+
+callback hell can be handled using promise chain
 
