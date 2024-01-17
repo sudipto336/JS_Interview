@@ -68,3 +68,16 @@ advantage of closure - used in currying, some higher order fns (memoize, once), 
 
 disadvantage of closure - consumes lots of memory as memory held by variables of closure do not get garbage collected
 
+to perform any async operation after another operation, wrap that operation code inside a fn and pass to the another fn
+
+we can perform async operation by wrapping the code inside a fn and pass that fn as callback to setTimeout
+
+callback fn is a fn which is passed to another fn (higher order fn) and that callback fn gets called later by the another fn
+
+advantage of callback - used in async operation
+
+disadvantage of callback - 
+a. callback hell (callback inside callback and so on) 
+b. inversion of control (giving control of code to another code by passing callback fn to another fn)
+
+
