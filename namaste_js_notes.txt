@@ -86,17 +86,25 @@ issues of callback can be handled using promise
 
 promise obj gets filled with the result of async operation after a certian period of time
 
-a callback fn is attached to promise obj using then() (not passed to another fn, so prevents inversion of control) 
+a success callback fn is attached to promise obj using then() 
 
-this callback fn gets called once whenever promise gets resolved i.e promise obj gets filled with data
+a failure callback fn is attached to promise obj using catch()
+
+in promise, we do not pass a fn to another fn, rather we attach callback fn to promise obj, so it prevents inversion of control
+
+when promise gets resolved/fulfilled, then promise obj gets filled with data returned by async operation and then success callback fn gets called only once
+
+when promise gets rehected, then failure callback fn gets called only once
 
 promise obj is immutable
 
-promise obj has 2 property - promise result and promise state
-
-promise obj has 3 states - pending, fulfilled, rejected
-
-when promise obj is fulfilled, the obj gets filled with data returned by async operation
+promise can be resolved only once
 
 callback hell can be handled using promise chain
+
+in each level of promise chain, we need to return data/promise
+
+catch() handles any error thrown by any promise obj at any level above the catch()
+
+resolve, reject - provided by js
 
