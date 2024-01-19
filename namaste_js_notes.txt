@@ -98,6 +98,10 @@ when promise gets rehected, then failure callback fn gets called only once
 
 promise obj is immutable
 
+promise obj contains promise reuslt and promise state
+
+promise state - pending, fulfilled, rejected
+
 promise can be resolved only once
 
 callback hell can be handled using promise chain
@@ -107,4 +111,16 @@ in each level of promise chain, we need to return data/promise
 catch() handles any error thrown by any promise obj at any level above the catch()
 
 resolve, reject - provided by js
+
+Promise APIs - used to handle parallel API calls - Promise.all(), Promise.allSettled(), Promise.race(), Promise.any() - all takes array of promises
+
+Promise.all() - it will wait for all promises to be fulfilled and returns array of result of all promises - if any 1 of the promise fails, it throws error immidiately - fail fast (if all success, then return result if any fails, return error)
+
+Promise.allSettled() - it will wait for all promises to be settled (either fulfilled/rejected) and returns array of result of all promises  - if any promise is fulfilled then it will include value of result in the array or if any promise is rejected then it will include the error in the array - the returned array contains obj with properties status and value(result)/reason(error)
+
+Promise.race() - it returns result of first settled promise (either fulfilled/rejected) - returns a single value (result value or error)
+
+Promise.any() - it waits for first fulfilled promise (success) and returns the result of that - if all fails then it will return AggregateError with array of all errors - seeking first success
+
+settled - got result (fulfilled/resolved/success or rejected/rejected/failure)
 
