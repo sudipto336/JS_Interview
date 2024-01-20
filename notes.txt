@@ -94,7 +94,7 @@ in promise, we do not pass a fn to another fn, rather we attach callback fn to p
 
 when promise gets resolved/fulfilled, then promise obj gets filled with data returned by async operation and then success callback fn gets called only once
 
-when promise gets rehected, then failure callback fn gets called only once
+when promise gets rejected, then failure callback fn gets called only once
 
 promise obj is immutable
 
@@ -110,7 +110,7 @@ in each level of promise chain, we need to return data/promise
 
 catch() handles any error thrown by any promise obj at any level above the catch()
 
-resolve, reject - provided by js
+resolve, reject - fns provided by js
 
 Promise APIs - used to handle parallel API calls - Promise.all(), Promise.allSettled(), Promise.race(), Promise.any() - all takes array of promises
 
