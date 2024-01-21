@@ -166,3 +166,18 @@ once the promise is resolved, js engine resumes fn execution where it left and t
 
 errors can be handled (while using async-await) using thr-catch or .catch() on async fn call
 
+this in global scope points to global obj (different based on js runtime env - for browser global obj is window - for node global obj is global)
+
+a. in strict mode, value of this inside a fn is undefined
+b. in  non strict mode, value of this inside a fn is global obj due to this substituition (if value of this is undefined/null,then it gets replcaed with global obj)
+
+this inside a method of obj is the obj where the method is present
+
+this inside an arrow fn is enclosign lexical context
+
+call, bind, apply - used to share method of an obj with another obj or to overrid value of this keyword - value of this is passed as arg to these methods
+
+this inside DOM is HTML element
+
+
+
