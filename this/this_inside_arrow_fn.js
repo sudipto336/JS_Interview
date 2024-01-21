@@ -9,10 +9,10 @@ obj2.b();
 
 const obj3 = {
   a: 10,
-  b: () => {
-    function c() {
+  b: function () {
+    const c = () => {
       console.log(this);
-    }
+    };
     c();
   },
 };
