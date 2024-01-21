@@ -124,3 +124,45 @@ Promise.any() - it waits for first fulfilled promise (success) and returns the r
 
 settled - got result (fulfilled/resolved/success or rejected/rejected/failure)
 
+webapis provided by browser - fetch(), setTimeout(), DOM APIs etc.
+
+once promise is created, it cant be cancelled
+
+fetch() - 
+returns a promise 
+-> once the promise is resolved, it returns a Response obj which has bady which is a readable stream
+-> to convert readable stream to json we can call .json() on the Response obj
+-> json() returns a promise, then the promise is resolved, json value is returned
+
+when a js program is run, a global execution context is created and pushed inside call stack
+
+when a fn is invokde/executed, an execution context is created for that fn and pushed inside call stack
+
+when fn execution completed, the execution context for that fn gets moved out of call stack and gets deleted
+
+when js program execution completed, the global execution context gets moved out of call stack and gets deleted
+
+js engine has only 1 call stack (single threaded - can execute 1 line at a time)
+
+js engiones executes line by line and dose not wait for anything (synchronous)
+
+async-await is used to handle promise like then()
+
+async is used to make a fn asynchronous which definitely returns a promise
+
+if normal value is returned from async fn, it wraps inside a promise and returns that
+
+if a promise is returned from async fn, it returns that promise as it is
+
+await is used before a promise to handle that promise
+
+awiat can be used inside an async fn 
+
+in case of then(), js engine does not wait for promise to be resolved rather it executes other lines synchrnously (line by line)
+
+when js engine sees await, it suspends fn execution at that line and the fn gets out of call stack (it is like js engine waits for promise to be resolved), it does not block call stack (main thread) othwrwise page will be freezed, by that time any other code can execute (ex - event handler) in call stack
+
+once the promise is resolved, js engine resumes fn execution where it left and the fn gets into call stack
+
+errors can be handled (while using async-await) using thr-catch or .catch() on async fn call
+
