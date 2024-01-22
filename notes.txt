@@ -168,8 +168,10 @@ errors can be handled (while using async-await) using thr-catch or .catch() on a
 
 this in global scope points to global obj (different based on js runtime env - for browser global obj is window - for node global obj is global)
 
+this inside a fn depends on strict/non-strict mode
+
 a. in strict mode, value of this inside a fn is undefined
-b. in  non strict mode, value of this inside a fn is global obj due to this substituition (if value of this is undefined/null,then it gets replcaed with global obj)
+b. in  non strict mode, value of this inside a fn is global obj due to this substituition (in non-strict mode, if value of this is undefined/null,then it gets replcaed with global obj)
 
 this inside a method of obj is the obj where the method is present
 
