@@ -1,16 +1,16 @@
-when a JS program is run, a global exection context is created and pushed inside call stack
+When a JS program is run, a global exection context is created and pushed inside call stack
 
-when a fn is invoked, a new exection context is created and pushed inside call stack
+When a fn is invoked, a new exection context is created and pushed inside call stack
 
-exection context is created in 2 phase - 1. Memory creation Phase (variable environment) 2. Code execution phase (thread of execution)
+Exection context is created in 2 phase - 1. Memory creation Phase (variable environment) 2. Code execution phase (thread of execution)
 
-in memory creation phase, memory is allocated to all variable, params, fns and undefined (placeholder) is assigned to variables and reference to fn code (fn definition) is assigned to fns
+In memory creation phase, memory is allocated to all variable, params, fns and undefined (placeholder) is assigned to variables and reference to fn code (fn definition) is assigned to fns
 
-in code execution phase, code is executed 1 line at a time (synchronous single threaded)
+In code execution phase, code is executed 1 line at a time (synchronous single threaded)
 
-when a fn executio is completed then the execution context for that fn gets deleted and removed from call stack and control goes back to global execution context
+When a fn execution is completed or return statement is encountered then the execution context for that fn gets deleted and removed from call stack and control goes back to the context inside which the fn was executed (global execution context if the fn is declared globally)
 
-when whole code execution gets completed then global execution context gets removed from call stack and call stack becomes empty
+When whole code execution gets completed then global execution context gets removed from call stack and call stack becomes empty
 
 hoisting - ability to access variable before declaration and inintialization
 
